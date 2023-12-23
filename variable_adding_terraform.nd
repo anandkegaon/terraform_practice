@@ -1,9 +1,10 @@
-
+     // provider name //
 provider "aws" {
 
    region     = "us-east-1"
    
 }
+      // resources add //
 
 resource "aws_instance" "server" {
    
