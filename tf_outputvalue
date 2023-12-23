@@ -1,0 +1,25 @@
+// Terraform output value //
+
+
+provider "aws" {
+
+    region = "us-east-1"
+  
+}
+
+resource "aws_instance" "nameserver" {
+
+    ami = "ami-079db87dc4c10ac91"
+    instance_type = "t2.micro"
+     
+  
+}
+
+// this command will dislpy the output after the terraform apply command will get execute , in sensitive option we can make it as true or flase also 
+  true - it will disply senstive / fasle - it will dislay the value - "anand"
+
+output "my_console_output" {                                             
+  value = "anand"
+  sensitive = true
+}
+
