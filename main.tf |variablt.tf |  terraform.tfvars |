@@ -1,0 +1,43 @@
+Creating " main.tf / varibale.tf / terraform.tfvars " files and create the instance using this files.
+
+frst create main.tf file and add basic data as follows.
+
+main.tf : Mention only provider and resource type in this file.
+//
+provider "aws" {
+
+    region = "us-east-1"
+  
+}
+resource "aws_instance" "server" {
+
+    ami = "ami-079db87dc4c10ac91"
+    instance_type = var.instance_type
+    
+    tags = {
+        Name = "Server"
+    }
+}
+ //
+
+variable.tf : add varibles type here as follows 
+
+//
+variable "instance_type" {  
+}
+//
+
+terraform.tfvars  : add the actual value for varible here as follows.
+
+  //
+  instance_type ="t2.micro"
+  //
+
+  after creating this all files follow below commands to peform the task.
+
+  terraform init
+  terraform plan
+  terraform apply
+  terraform destroy
+  
+
