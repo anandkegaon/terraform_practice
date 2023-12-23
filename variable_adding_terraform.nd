@@ -11,9 +11,9 @@ resource "aws_instance" "server" {
    ami           = "ami-079db87dc4c10ac91"
    
       // varibale adding example //
-   instance_type = var.instance_type
-   count = var.instance_count
-   associate_public_ip_address = var.enable_public_ip
+   instance_type = var.instance_type // variable 1 adding instance type //
+   count = var.instance_count      // var 2 instance count //
+   associate_public_ip_address = var.enable_public_ip //var 3 setting public ip =true //
    
 
 
@@ -23,19 +23,19 @@ resource "aws_instance" "server" {
 }
 
 variable "instance_type" {
-   description = "Instance type t2.micro"
+   description = "Instance type t2.micro"     // var 1 //
    type        = string
    default     = "t2.micro"
 } 
 
 variable "instance_count" {
-  description = "EC2 instance count"
+  description = "EC2 instance count"        //var 2 //
   type        = number
   default     = 2
 }
 
 variable "enable_public_ip" {
-  description = "Enable public IP address"
+  description = "Enable public IP address"  //var 3 //
   type        = bool
   default     = true
 }
