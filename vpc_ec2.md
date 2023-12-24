@@ -21,6 +21,8 @@ resource "aws_instance" "newserver" {
 }
 
   // vpc creation 
+
+  
 resource "aws_vpc" "demo-vpc" {
   cidr_block = "10.10.0.0/16"
  tags = {
@@ -29,6 +31,8 @@ resource "aws_vpc" "demo-vpc" {
 
 }
   // subnet creation
+
+  
 resource "aws_subnet" "demo-sub" {
   vpc_id     = aws_vpc.demo-vpc.id
   cidr_block = "10.10.1.0/24"
@@ -39,6 +43,8 @@ resource "aws_subnet" "demo-sub" {
 }
 
   // create IGW internet gateway
+
+  
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.demo-vpc.id
 
@@ -48,6 +54,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
   // create route table
+  
 
   resource "aws_route_table" "demo-rt" {
   vpc_id = aws_vpc.demo-vpc.id
@@ -63,11 +70,17 @@ resource "aws_internet_gateway" "igw" {
 
   // associate subnet with route table
 
+  
+
 resource "aws_route_table_association" "demo-subnet-rt" {
   subnet_id      = aws_subnet.demo-sub.id
   route_table_id = aws_route_table.demo-rt.id
 }
+
+
   // create security group
+
+  
 
   resource "aws_security_group" "demo-sg" {
   name        = "demo-sg"
