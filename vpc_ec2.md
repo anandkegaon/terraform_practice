@@ -30,6 +30,8 @@ resource "aws_vpc" "demo-vpc" {
   }
 
 }
+
+
   // subnet creation
 
   
