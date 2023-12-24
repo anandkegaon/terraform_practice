@@ -1,16 +1,16 @@
-     // ec2 instance creation along with the VPC creation.
+ // ec2 instance creation along with the VPC creation.
      
 
 
 provider "aws" {
   
-    region = "us-east-1"
+region = "us-east-1"
 }
 
 resource "aws_instance" "newserver" {
 
  
-    ami = "ami-079db87dc4c10ac91"
+ ami = "ami-079db87dc4c10ac91"
 
    instance_type = "t2.micro"
    key_name = "anand"
