@@ -1,7 +1,5 @@
  // ec2 instance creation along with the VPC creation.
      
-
-
 provider "aws" {
   
 region = "us-east-1"
