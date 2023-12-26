@@ -17,28 +17,6 @@ locals {
   my_third_local = "kegaon-${local.my_second_local}"
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 resource "aws_instance" "server" {
 
     ami = var.osid
