@@ -27,7 +27,7 @@ resource "aws_instance" "server" {
     
    
     tags = {
-        "Name"="${local.staging_env}-sevrer"    // add this value "${local.staging_env}" in the tags section , 
+        "Name"="${local.my_second_local}-sevrer"    // add this value "${local.staging_env}" in the tags section , 
                                                               so that whaterver we will mention in the locals it will reflect here //
     }
 
