@@ -1,5 +1,7 @@
 locals {
-  staging_env = "stage"     // give the local name which u want to mention. ex . stage , temp , test //
+  staging_env = "stage"    
+
+                            // give the local name which u want to mention. ex . stage , temp , test //
 }                           //  "${local.staging_env}"  add this in the tags section //
 
 ## Multi locals also we can assign in Terraform using below command //
