@@ -1,5 +1,5 @@
 locals {
-  staging_env = "staging"     // give the local name which u want to mention.//
+  staging_env = "stage"     // give the local name which u want to mention. ex . stage , temp , test //
 }
 
 
