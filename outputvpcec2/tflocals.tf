@@ -2,6 +2,42 @@ locals {
   staging_env = "stage"     // give the local name which u want to mention. ex . stage , temp , test //
 }                           //  "${local.staging_env}"  add this in the tags section //
 
+## Multi locals also we can assign in Terraform using below command //
+
+# Here my_second_local is referencing to my_first_local     
+
+locals {
+  my_second_local = "anand-${local.my_first_local}"
+} 
+
+# here my_third_local is referencing to my_second_local
+
+locals {
+  
+  my_third_local = "kegaon-${local.my_second_local}"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 resource "aws_instance" "server" {
 
