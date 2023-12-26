@@ -1,6 +1,6 @@
 locals {
   staging_env = "stage"     // give the local name which u want to mention. ex . stage , temp , test //
-}
+}                           //  "${local.staging_env}"  add this in the tags section //
 
 
 resource "aws_instance" "server" {
