@@ -93,4 +93,20 @@ resource "aws_route_table_association" "demo-subnet-rt" {
     Name = "sg"
   }
 }
+
+// create security group
+
+  resource "aws_security_group" "demo-sg" {
+  name        = "demo-sg"
+  vpc_id      = aws_vpc.demo-vpc.id
+
+  dynamic "ingress" {
+    for_each = ["80","443","1433","22"]      // dynamic port mappping //
+    content {
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  
   
