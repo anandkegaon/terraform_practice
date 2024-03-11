@@ -3,6 +3,8 @@ provider "aws" {
     region = "us-east-1"
 }
 
+
+// instance creation
 resource "aws_instance" "newserver" {
 
  
