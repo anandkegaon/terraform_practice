@@ -1,0 +1,40 @@
+
+ 
+ terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+
+provider "aws" {
+  region = "ap-south-1"
+}
+
+resource "aws_instance" "name1" {
+
+  ami = "ami-007020fd9c84e18c7"
+  key_name = "laptop"
+  instance_type = "t2.micro"
+  
+   tags = {
+
+     "name" = "name1"
+   }
+   user_data = <<-EOF
+              #!/bin/bash
+              sudo apt-get update
+              sudo apt-get install -y software-properties-common
+              sudo apt-add-repository --yes --update ppa:ansible/ansible
+              sudo apt-get install -y ansible
+              EOF
+  
+}
+
+output "instance_public_ip" {
+  value = aws_instance.name1.public_ip
+}
+
